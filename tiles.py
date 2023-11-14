@@ -1,5 +1,5 @@
 from math import *
-TOTAL_WIDTH = 147
+TOTAL_WIDTH = 5
 TILE_WIDTH = 5
 
 
