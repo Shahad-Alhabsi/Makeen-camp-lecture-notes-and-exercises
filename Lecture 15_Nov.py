@@ -24,7 +24,7 @@ if gender.upper() =="M":
         
 print(answer)
 
-# # Exercise 4: Write a program that takes two times of the day and prints out wa time comes before the other.
+# Exercise 4: Write a program that takes two times of the day and prints out wa time comes before the other.
 time1 = input ("Enter the first time: ")
 time2 = input ("Enter the seconnd time: ")
 
@@ -59,13 +59,48 @@ else:# the same period
             print(time1 + " is the same as " + time2)
     
 
+# Exercise 5: Wrie a progra tha simulates an ATM, the program should ask the user foue their PIN
+# it it's correct, allow them to check palance, withdraw money, or deposit money.
+PIN = 1234
+balance = 1000000
+user_pin = int(input("Enter your PIN: "))
 
+cancle = False
+while not cancle:
+    if user_pin == PIN:
+        print("\nA. Check palance\nB. withdraw money\nC. deposit money")
+        choice = input("Your Choice (A,B or C)? ")
+        if choice.upper() == "A":
+            print("Your Palance = " + str(balance) + " OR")
+            c = input("Exit (y/n)? ")
+            if c.upper() == "Y":
+                cancle =True
+        
+        elif choice.upper() == "B":
+            withdraw_amount = float(input("Enter amount to withdraw: "))
+            if withdraw_amount > balance:
+                print("Insuffecient balance")
+            else:
+                balance -= withdraw_amount
+                print(str(withdraw_amount) + " OR whas withdrawed from your account successfully")
+                c = input("Exit (y/n)? ")
+                if c.upper() == "Y":
+                    cancle =True
 
+        elif choice.upper() == "C":
+            deposit_amount = float(input("Enter amount to deposit: "))
+            balance += deposit_amount
+            print(str(deposit_amount) +" OR whas withdrawed from your account successfully")
+            c = input("Exit (y/n)? ")
+            if c.upper() == "Y":
+                cancle =True
+                
+        else:
+            print("Invalid Choice!\n try again \n")
+            
 
-
-
-
-
+    else:
+        print("Invalid PIN!\n try again \n")
 
 
 
