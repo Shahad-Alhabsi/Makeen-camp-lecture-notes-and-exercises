@@ -116,10 +116,16 @@ while not stop:
 
 
 
-
-
-
-
+# Exercise 7: Find the graetest value out of A,B and C
+A,B,C = input("Enter 3 numbers (separated by a space): ").split()
+while(not(A.isdigit() and A.isdigit() and A.isdigit())):
+    A,B,C = input("Invaled input! Enter 3 numbers (separated by a space): ").split()
+greatest = A
+if B>A:
+    greatest = B
+if C>B:
+    greatest = C
+print("The greatest number is ",greatest)
 
 
 
