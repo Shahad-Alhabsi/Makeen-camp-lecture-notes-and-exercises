@@ -4,7 +4,8 @@ if n%2 == 0:
     print(str(n)+" is an even number")
 else:
     print(str(n)+" is an odd number")
-    
+
+
 # Exercise 2: calculate the discount of a shopping cart based on the total amount,
 # if the total amount is greater than 100 apply 10% discount, otherwise, apply a 5% disount.
 price = float(input("Enter te price: "))
@@ -20,9 +21,9 @@ answer = "Not accepted"
 if gender.upper() =="M":
     age = int(input("Enter yor age please: "))
     if 30>= age >=24:
-        answer = "Accepted"
-        
+        answer = "Accepted"        
 print(answer)
+
 
 # Exercise 4: Write a program that takes two times of the day and prints out wa time comes before the other.
 time1 = input ("Enter the first time: ")
@@ -86,24 +87,32 @@ while not cancle:
                 c = input("Exit (y/n)? ")
                 if c.upper() == "Y":
                     cancle =True
-
         elif choice.upper() == "C":
             deposit_amount = float(input("Enter amount to deposit: "))
             balance += deposit_amount
             print(str(deposit_amount) +" OR whas withdrawed from your account successfully")
             c = input("Exit (y/n)? ")
             if c.upper() == "Y":
-                cancle =True
-                
+                cancle =True                
         else:
             print("Invalid Choice!\n try again \n")
-            
-
     else:
         print("Invalid PIN!\n try again \n")
 
 
-
+# Exercise 6: Find the leap year
+stop = False
+while not stop:
+    year = input("Enter the year: ")
+    while(year=='' or not year.isdigit()):
+            year = input("The year must be an integer number without spaces. Try again: ")
+    if (int(year)%4==0):
+        print("This year is a leap year")
+    else:
+        print("This year is not a leap year")
+    exit = input("Exit? (y/n): ")
+    if exit.upper() == "Y":
+        stop = True
 
 
 
