@@ -65,26 +65,34 @@ class BankAccoun:
         self.__account_n = new_acc_n
 
     def withdrawal(self, amount):
-        if amount < 0:
-            print("\nAmount cannot be < 0")
-        else:
-            try:
-                amount = float(amount)
-                if self.__balance < amount:
-                    print("I\nnsufficient balance")
-                else:
-                    self.__balance = (self.__balance - amount)
-                    print(f"\n{amount} OR withdrawen saccesfully")
-            except:
-                print("Invalid input")
+        try:
+            amount = float(amount)
+            if amount > 0:
+                  if self.__balance > amount:
+                      self.__balance = (self.__balance - amount)
+                      print(f"\n{amount} OR withdrawen saccesfully")
+                      
+                  else:
+                      print("\nInsufficient balance")
+            else:
+                print("\nAmount cannot be < 0")
+              
+        except:
+            print("/nInvalid input")
         
         
     def diposit(self, amount):
-         if amount < 0:
-            print("\nAmount cannot be < 0 ")
-         else:
-            self.__balance = (self.__balance + amount)
-            print(f"\n{amount} OR diposited saccesfully")
+        try:
+            amount = float(amount)
+            if amount < 0:
+                print("\nAmount cannot be < 0 ")
+            else:
+                self.__balance = (self.__balance + amount)
+                print(f"\n{amount} OR diposited saccesfully") 
+        except:
+            print("\nInvalid input")
+            
+        
     
     def display(self):
         print(f"\nAccount number : {self.__account_n} || Balance = {self.__balance}\n")
@@ -99,6 +107,7 @@ o.withdrawal(60)
 o.display()
 o.diposit(1000)
 o.diposit(-100)
+o.diposit("kk")
 o.display()
 
 
@@ -184,5 +193,6 @@ obj1.display_books()
 
     
     
+
 
 
